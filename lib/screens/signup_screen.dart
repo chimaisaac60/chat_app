@@ -8,6 +8,11 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final _userNameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +20,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SingleChildScrollView(
         child: Container(
           margin:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.25),
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -24,32 +29,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 decoration: textFieldDecoration('Username'),
                 style: Theme.of(context).textTheme.bodyText2,
                 autocorrect: false,
-                // controller: ,
+                controller:_userNameController ,
                 // onSubmitted: ,
               ),
               TextField(
                 decoration: textFieldDecoration('E-mail'),
                 style: Theme.of(context).textTheme.bodyText2,
                 autocorrect: false,
-                // controller: ,
+                controller:_emailController,
                 // onSubmitted: ,
               ),
               TextField(
                 decoration: textFieldDecoration('Password'),
                 style: Theme.of(context).textTheme.bodyText2,
                 autocorrect: false,
-                // controller: ,
+                controller:_passwordController,
                 // onSubmitted: ,
               ),
               TextField(
                 decoration: textFieldDecoration('Confirm Password'),
                 style: Theme.of(context).textTheme.bodyText2,
                 autocorrect: false,
-                // controller: ,
+                controller:_confirmPasswordController ,
                 // onSubmitted: ,
               ),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
               styledTextButton(
                   'Sign Up', Colors.white, Theme.of(context).primaryColor),
